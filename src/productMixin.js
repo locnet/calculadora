@@ -100,14 +100,14 @@ export const productMixin = {
 		    navega5: {
 		    	name: 'Navega 3Gb',
 		    	price: 5,
-		    	minutes: '',
+		    	minutes: 'Sin llamadas',
 		    	gb: 3
 		    },
 
 		    navega10: {
 		    	name: 'Navega 6Gb',
 		    	price: 10,
-		    	minutes: "",
+		    	minutes: 'Sin llamadas',
 		    	gb: 6
 		    },
 

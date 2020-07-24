@@ -139,7 +139,7 @@
 
 				if (this.phoneCounter < 4) {
 
-					var m = {name: '', price: '0', minutes:'', gb: '',divColor: ''};
+					var m = {name: '', price: 0, minutes:'', gb: '',divColor: ''};
 
 					// creamos un nuevo elemento en el array, que sera el ultima
 					// en js cuando se borra un elemento no afecta la longitud del array,

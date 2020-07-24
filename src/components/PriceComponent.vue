@@ -50,7 +50,7 @@
 					</td>
 				</tr>
 
-				<tr v-for="mobile in this.$store.state.mobilesColection">
+				<tr v-for="(mobile) in this.$store.state.mobilesColection">
 
 					<td>
 						
@@ -183,7 +183,11 @@
 				}
 				t += x - this.getTotalMobilePrice();
 				return t;
-			}	
+			},
+
+			setMinutesText(planName) {
+				
+			}
 
 		}
 	}
