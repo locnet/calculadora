@@ -52,7 +52,7 @@
 
 				<tr v-for="(mobile) in this.$store.state.mobilesColection">
 
-					<td>
+					<td v-show="mobile.price > 0">
 						
 						<p> Movil {{ mobile.name }} <br />
 							<span class="blue extra-small" style="padding-top:0px; margin-top: 0px">
@@ -62,7 +62,7 @@
 						
 					</td>
 
-					<td>
+					<td v-show="mobile.price > 0">
 						<p class="blue w-600">{{ getMobilePrice(mobile.price) }}€
 							<span class="extra-small">/mes</span>
 						</p>
