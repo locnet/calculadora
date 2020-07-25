@@ -39,8 +39,7 @@
 
 							<div class="col-4">
 								<p class="blue bold align-middle">
-									{{ index.minutes }} 
-									{{ index.minutes[0] == 'I' ? '' : 'min' }}<br/>
+									{{ index.minutes.shortDesc }}<br/>
 									{{ checkGb(index.gb) }}GB
 								</p>
 							</div>

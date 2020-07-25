@@ -56,7 +56,7 @@
 						
 						<p> Movil {{ mobile.name }} <br />
 							<span class="blue extra-small" style="padding-top:0px; margin-top: 0px">
-							{{ mobile.minutes[0] == 'I' ? 'llamadas nacionales ilimitadas' : mobile.minutes +' minutos internacionales' }} y
+							{{ mobile.minutes.largeDesc }} y
 							{{ checkGb(mobile.gb) }}GB </span>
 						</p>
 						
@@ -183,10 +183,6 @@
 				}
 				t += x - this.getTotalMobilePrice();
 				return t;
-			},
-
-			setMinutesText(planName) {
-				
 			}
 
 		}

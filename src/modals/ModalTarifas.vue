@@ -24,7 +24,7 @@
 										v-show="checkedBtn == combo5.name"></span>
 
 									<span class="white">
-										{{ combo5.minutes }} min +  {{ combo5.gb }}GB
+										{{ combo5.minutes.shortDesc }} +  {{ combo5.gb }}GB
 										<br/> <strong>{{ combo5.price }}€</strong>
 									</span>
 								
@@ -38,7 +38,7 @@
 										v-show="checkedBtn == combo10.name"></span>
 
 									<span class="white">
-											{{ combo10.minutes }} min + {{ combo10.gb }}GB
+											{{ combo10.minutes.shortDesc }} + {{ combo10.gb }}GB
 											<br/><strong> {{ combo10.price }}€</strong>
 									</span>
 								</button>
@@ -52,7 +52,7 @@
 										v-show="checkedBtn == combo15.name"></span>	
 
 									<span class="text-center white">
-										{{ combo15.minutes }}min + {{ combo15.gb }}GB
+										{{ combo15.minutes.shortDesc }} + {{ combo15.gb }}GB
 										</br><strong>{{ combo15.price }}€</strong>
 									</span>
 								</button>
@@ -66,7 +66,7 @@
 										v-show="checkedBtn == combo20.name"></span>
 
 									<span class="text-center white">
-											{{ combo20.minutes }}min + {{ combo20.gb }}GB
+											{{ combo20.minutes.shortDesc }} + {{ combo20.gb }}GB
 										</br><strong>{{ combo20.price }}€</strong>
 									</span>
 								</button>
@@ -88,7 +88,7 @@
 										v-show="checkedBtn == mini.name"></span>
 
 									<span class="text-center white">
-										{{ mini.minutes }} min + {{ mini.gb }}GB
+										{{ mini.minutes.shortDesc }} + {{ mini.gb }}GB
 									</br><strong>{{ mini.price }}€</strong>
 									</span>
 								</button>
@@ -101,7 +101,7 @@
 										v-show="checkedBtn == ilimitado10.name"></span>
 									
 									<span class="text-center white">
-										{{ ilimitado10.minutes }} + {{ ilimitado10.gb }}GB
+										{{ ilimitado10.minutes.shortDesc }} + {{ ilimitado10.gb }}GB
 										<br/><strong>{{ ilimitado10.price }}€</strong>
 									</span>
 								</button>
@@ -113,7 +113,7 @@
 										v-show="checkedBtn == ilimitado15.name"></span>
 
 									<span class="text-center white">
-											{{ ilimitado15.minutes }} + {{ ilimitado15.gb }}GB
+											{{ ilimitado15.minutes.shortDesc }} + {{ ilimitado15.gb }}GB
 										</br><strong>{{ ilimitado15.price }}€</strong>
 									</span>
 								</button>
@@ -127,7 +127,7 @@
 										v-show="checkedBtn == ilimitado20.name"></span>
 
 									<span class="text-center white">
-										{{ ilimitado20.minutes }} + {{ ilimitado20.gb }}GB
+										{{ ilimitado20.minutes.shortDesc }} + {{ ilimitado20.gb }}GB
 									</br><strong>{{ ilimitado20.price }}€</strong>
 									</span>
 								</button>
@@ -148,7 +148,7 @@
 										v-show="checkedBtn == navega5.name"></span>
 
 									<span class="text-center white">
-										  {{ navega5.gb }}GB
+										  {{ navega5.minutes.shortDesc }} + {{ navega5.gb }}GB
 										  </br><strong>{{ navega5.price }}€</strong>
 									</span>
 								</button>
@@ -161,7 +161,7 @@
 										v-show="checkedBtn == navega10.name"></span>
 
 									<span class="text-center white">
-										{{ navega10.gb }}GB
+										{{ navega10.minutes.shortDesc }} + {{ navega10.gb }}GB
 									</br><strong>{{ navega10.price }}€</strong>
 									</span>
 								</button>
