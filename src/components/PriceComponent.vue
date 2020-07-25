@@ -41,7 +41,9 @@
 
 				<tr v-show="this.$store.state.voicePrice == 3 || this.$store.state.voicePrice == 5">
 					<td>
-						<p >Telefono fijo </p>						
+						<p >Telefono fijo <br />
+							<span class="blue extra-small" style="padding-top:0px; margin-top: 0px">{{ fijoConLlamadas.minutes.largeDesc }} </span>
+						</p>						
 					</td>
 					<td>
 						<p class="blue w-600">{{ this.$store.state.voicePrice }}€ 
