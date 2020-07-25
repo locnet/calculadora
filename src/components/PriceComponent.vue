@@ -28,7 +28,7 @@
 				<tr v-show="this.$store.state.voicePrice == 1">
 					<td>
 						<p >Telefono fijo <br />
-							<span class="text-danger extra-small" style="padding-top:0px; margin-top: 0px">{{ fijoSinLlamadas.minutes }} </span>
+							<span class="text-danger extra-small" style="padding-top:0px; margin-top: 0px">{{ fijoSinLlamadas.minutes.largeDesc }} </span>
 						</p>
 						
 					</td>
@@ -73,10 +73,15 @@
 		</table>
 		</p>
 		
-		<h1 class="big">
-			<span class="w-600">{{ getTotalPrice() }} €</span><span class="small"> IVA incl.</span>
+		<h1 class="big d-none d-sm-none d-md-block d-xl-block d-lg-block">
+			<span class="w-600">TOTAL {{ getTotalPrice() }} €</span><span class="small"> IVA incl.</span>
 		</h1>
 		<p class="blue" v-show="this.$store.state.internetPrice > 0"> Por tener la fibra en el pack te ahorras {{ getTotalDiscount() }} euros.</p>
+		<div class="col-12 col-sm-12 d-md-none d-lg-none d-xl-none fixed-bottom bgGrey pt-3">
+			<h1 class="big text-center">
+				<span class="white w-600">TOTAL {{ getTotalPrice() }} €</span><span class="white small"> IVA incl.</span>
+			</h1>
+		</div>
 	</div>
 
 

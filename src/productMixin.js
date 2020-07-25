@@ -131,7 +131,7 @@ export const productMixin = {
 		    	name: 'Navega 3Gb',
 		    	price: 5,
 		    	minutes: {
-		    		shortDesc: 'Solo en Digi',
+		    		shortDesc: 'Sin min',
 		    		largeDesc: 'Solo llamadas ilimtadas de Digi a Digi'
 		    	},		    		
 		    	gb: 3
@@ -141,7 +141,7 @@ export const productMixin = {
 		    	name: 'Navega 6Gb',
 		    	price: 10,
 		    	minutes: {
-		    		shortDesc: 'Solo en Digi',
+		    		shortDesc: 'Sin min',
 		    		largeDesc: 'Solo llamadas ilimtadas de Digi a Digi'
 		    	},
 		    	gb: 6

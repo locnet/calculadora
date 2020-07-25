@@ -325,7 +325,7 @@ label {
       position: relative;
       display: inline-block;
       width: 60px;
-      height: 34px;
+      height: 26px;
       margin: 0px;
     }
 
@@ -352,10 +352,10 @@ label {
     .slider:before {
       position: absolute;
       content: "";
-      height: 26px;
-      width: 26px;
+      height: 22px;
+      width: 22px;
       left: 4px;
-      bottom: 4px;
+      bottom: 2px;
       background-color: white;
       -webkit-transition: .4s;
       transition: .4s;
@@ -440,6 +440,23 @@ label {
         background: url('../img/configurar-apn-digi-mobil-small.jpg') no-repeat center top;
     }
 
+    /*----------------------
+    |    SWICH BUTTON      |
+    -----------------------*/
+
+    .slider:before {
+      height: 16px;
+      width: 16px;
+      left: 4px;
+      bottom: 2px;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 20px;
+      margin: 0px;
+    }
 
 }
 

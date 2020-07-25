@@ -64,7 +64,7 @@
 					v-bind:class="{ 'selected-card': phoneActiveType == 'con_llamadas' }">
 
 					<div class="card-body">
-						<h4 class="card-title blue w-200">Con llamadas</h4>
+						<p class="card-text blue w-200">Con llamadas</p>
 						<h4 class="card-text blue w-600">{{ phoneWithCallsPrice }} €
 							<span class="small">/mes</span>
 						</h4>
@@ -78,7 +78,7 @@
 					v-bind:class="{ 'selected-card': phoneActiveType == 'sin_llamadas' }">
 
 					<div class="card-body">
-						<h4 class="card-title blue w-200">Sin llamadas</h4>
+						<p class="card-text blue w-200">Sin llamadas</p>
 						<h4 class="card-text blue w-600">{{ onlyPhonePrice }} €
 							<span class="small">/mes</span>
 						</h4>
