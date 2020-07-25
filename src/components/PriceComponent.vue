@@ -72,13 +72,14 @@
 				</tr>
 
 			</tbody>
-		</table>
-		</p>
+		</table>		
 		
 		<h1 class="big d-none d-sm-none d-md-block d-xl-block d-lg-block">
 			<span class="w-600">TOTAL {{ getTotalPrice() }} €</span><span class="small"> IVA incl.</span>
 		</h1>
 		<p class="blue" v-show="this.$store.state.internetPrice > 0"> Por tener la fibra en el pack te ahorras {{ getTotalDiscount() }} euros.</p>
+		<!-- separador solo para moviles -->
+		<div class="d-md-none d-lg-none d-xl-none" style="min-height:60px"></div>
 		<div class="col-12 col-sm-12 d-md-none d-lg-none d-xl-none fixed-bottom bgGrey pt-3">
 			<h1 class="big text-center">
 				<span class="white w-600">TOTAL {{ getTotalPrice() }} €</span><span class="white small"> IVA incl.</span>
