@@ -3,7 +3,9 @@
     <!-- Vue component MainMenu -->
          
     <div class="container" >
-        <div class="h-60"></div>
+        <div class="col-12 pt-3 pb-3">
+          <h4 class="blue text-center">Tienda Digi Arganda: 91 87 00 693</h4>
+        </div>
         <div class="row">
             <div class="col-12 col-sm-12 col-md-8">
                 <!-- componente calculadora -->

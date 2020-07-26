@@ -192,6 +192,9 @@ label {
 .ilimitado {
     background-color: #3296d2;
 }
+.col-4 > h3, .col-4 > p  {
+    margin-bottom: 0px;
+}
 
 .navega {
     background-color: #4bb708;

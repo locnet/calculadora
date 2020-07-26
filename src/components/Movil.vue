@@ -33,12 +33,12 @@
 
 							<div class="col-4" >
 
-								<p><strong>{{ index.name }} </strong></p>
+								<p class="extra-small"><strong>{{ index.name }} </strong></p>
 
 							</div>
 
 							<div class="col-4">
-								<p class="blue bold align-middle">
+								<p class="extra-small blue bold align-middle">
 									{{ index.minutes.shortDesc }}<br/>
 									{{ checkGb(index.gb) }}GB
 								</p>

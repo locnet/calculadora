@@ -2,6 +2,7 @@
 
 	<div class="productBox">
 		<div class="row ">
+			
 			<div class="col-md-2 col-8 col-sm-8 ">
 				<h5 class="blue align-middle"><i class="fas fa-wifi yellow"></i> Fibra</h5>
 			</div>

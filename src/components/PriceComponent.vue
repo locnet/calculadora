@@ -75,7 +75,9 @@
 		</table>		
 		
 		<h1 class="big d-none d-sm-none d-md-block d-xl-block d-lg-block">
-			<span class="w-600">TOTAL {{ getTotalPrice() }} €</span><span class="small"> IVA incl.</span>
+			<span class="w-600">
+				TOTAL {{ getTotalPrice() }} €</span><span class="small"> IVA incl.
+			</span>
 		</h1>
 		<p class="blue" v-show="getTotalDiscount()  > 0"> Por tener la fibra en el pack te ahorras {{ getTotalDiscount() }} euros.</p>
 		<!-- separador solo para moviles -->
