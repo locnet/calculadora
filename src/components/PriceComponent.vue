@@ -7,7 +7,9 @@
 			<tbody>
 				<tr  v-show="this.$store.state.internetPrice == 30">
 					<td>
-						<p>Fibra optica {{ fibra500.gb }}</p>
+						<p>Fibra optica {{ fibra500.gb }}<br/>
+							<span class="blue extra-small" style="padding-top:0px; margin-top: 0px">{{ fibra500.minutes.largeDesc }} </span>
+						</p>
 					</td>
 					<td>
 						<p class="blue w-600">{{ fibra500.price }}€ 
@@ -17,7 +19,9 @@
 				</tr>
 				<tr v-show="this.$store.state.internetPrice == 25">
 					<td>
-						<p >Fibra optica {{ fibra50.gb }} </p>
+						<p >Fibra optica {{ fibra50.gb }} <br/>
+							<span class="blue extra-small" style="padding-top:0px; margin-top: 0px">{{ fibra50.minutes.largeDesc }} </span> 
+						</p>
 					</td>
 					<td>
 						<p class="blue w-600">{{ fibra50.price }}€
@@ -79,7 +83,7 @@
 				TOTAL {{ getTotalPrice() }} €</span><span class="small"> IVA incl.
 			</span>
 		</h1>
-		<p class="blue" v-show="getTotalDiscount()  > 0"> Por tener la fibra en el pack te ahorras {{ getTotalDiscount() }} euros.</p>
+		<p class="blue" v-show="getTotalDiscount()  > 0"> Por tener la fibra en el pack te ahorras {{ getTotalDiscount() }} €/mes ( {{ getTotalDiscount() * 12 }} €/año).</p>
 		<!-- separador solo para moviles -->
 		<div class="d-md-none d-lg-none d-xl-none" style="min-height:60px"></div>
 		<div class="col-12 col-sm-12 d-md-none d-lg-none d-xl-none fixed-bottom bgGrey pt-3">

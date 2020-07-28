@@ -15,14 +15,20 @@ export const productMixin = {
             fibra500: {
             	name: 'Fibra 500Mb',
 				price: 30,
-				minutes: '',
+				minutes: {
+					shortDesc: '500mb/s',
+					largeDesc: 'Velocidad simetrica: 500mb/s de subida y bajada'
+				},
 				gb: '500Mb/s'
 			},
 
 		    fibra50: {
 		    	name: 'Fibra 50Mb',
 		    	price: 25,
-		    	minutes: '',
+		    	minutes:  {
+					shortDesc: '50mb/s',
+					largeDesc: 'Velocidad simetrica: 50mb/s de subida y bajada'
+				},
 		    	gb: '50Mb/s'
 
 		    },
