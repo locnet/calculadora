@@ -26,7 +26,8 @@
 							>
 
 						<h4 class="text-center m-3" 
-							v-show="index.price == 0">Elige una tarifa </h4>
+							v-show="index.price == 0">Elige una tarifa 
+						</h4>
 
 						<div  class="row text-center align-items-center"
 								 v-show="index.price > 0">
@@ -44,7 +45,7 @@
 								</p>
 							</div>
 
-							<div class="col-4 p-3" :class="[index.divColor]" >
+							<div class="col-4 p-2" :class="[index.divColor]" >
 								<h3 class="white w-600 align-middle">
 									{{ getMobilePrice(index.price) }}€<span class="small">/mes</span></h3>
 
