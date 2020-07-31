@@ -24,8 +24,9 @@
 										v-show="checkedBtn == combo5.name"></span>
 
 									<span class="white">
-										{{ combo5.minutes.shortDesc }} +  {{ combo5.gb }}GB
-										<br/> <strong>{{ combo5.price }}€</strong>
+										{{ combo5.minutes.shortDesc }} +  
+										{{ checkGb(combo5.gb) }}GB
+										<br/> <strong>{{ getMobilePrice(combo5.price) }}€</strong>
 									</span>
 								
 								</button>
@@ -38,8 +39,9 @@
 										v-show="checkedBtn == combo10.name"></span>
 
 									<span class="white">
-											{{ combo10.minutes.shortDesc }} + {{ combo10.gb }}GB
-											<br/><strong> {{ combo10.price }}€</strong>
+											{{ combo10.minutes.shortDesc }} + 
+											{{ checkGb(combo10.gb) }}GB
+											<br/><strong> {{ getMobilePrice(combo10.price) }}€</strong>
 									</span>
 								</button>
 							</div>
@@ -52,8 +54,9 @@
 										v-show="checkedBtn == combo15.name"></span>	
 
 									<span class="text-center white">
-										{{ combo15.minutes.shortDesc }} + {{ combo15.gb }}GB
-										</br><strong>{{ combo15.price }}€</strong>
+										{{ combo15.minutes.shortDesc }} + 
+										{{ checkGb(combo15.gb) }}GB
+										</br><strong>{{ getMobilePrice(combo15.price) }}€</strong>
 									</span>
 								</button>
 							</div>
@@ -66,8 +69,9 @@
 										v-show="checkedBtn == combo20.name"></span>
 
 									<span class="text-center white">
-											{{ combo20.minutes.shortDesc }} + {{ combo20.gb }}GB
-										</br><strong>{{ combo20.price }}€</strong>
+											{{ combo20.minutes.shortDesc }} + 
+											{{ checkGb(combo20.gb) }}GB
+										</br><strong>{{ getMobilePrice(combo20.price) }}€</strong>
 									</span>
 								</button>
 							</div>
@@ -88,8 +92,9 @@
 										v-show="checkedBtn == mini.name"></span>
 
 									<span class="text-center white">
-										{{ mini.minutes.shortDesc }} + {{ mini.gb }}GB
-									</br><strong>{{ mini.price }}€</strong>
+										{{ mini.minutes.shortDesc }} + 
+										{{ checkGb(mini.gb) }}GB
+									</br><strong>{{ getMobilePrice(mini.price) }}€</strong>
 									</span>
 								</button>
 							</div>
@@ -101,8 +106,9 @@
 										v-show="checkedBtn == ilimitado10.name"></span>
 									
 									<span class="text-center white">
-										{{ ilimitado10.minutes.shortDesc }} + {{ ilimitado10.gb }}GB
-										<br/><strong>{{ ilimitado10.price }}€</strong>
+										{{ ilimitado10.minutes.shortDesc }} + 
+										{{ checkGb(ilimitado10.gb) }}GB
+										<br/><strong>{{ getMobilePrice(ilimitado10.price) }}€</strong>
 									</span>
 								</button>
 							</div>
@@ -113,8 +119,9 @@
 										v-show="checkedBtn == ilimitado15.name"></span>
 
 									<span class="text-center white">
-											{{ ilimitado15.minutes.shortDesc }} + {{ ilimitado15.gb }}GB
-										</br><strong>{{ ilimitado15.price }}€</strong>
+											{{ ilimitado15.minutes.shortDesc }} + 
+											{{ checkGb(ilimitado15.gb) }}GB
+										</br><strong>{{ getMobilePrice(ilimitado15.price) }}€</strong>
 									</span>
 								</button>
 							</div>
@@ -127,8 +134,9 @@
 										v-show="checkedBtn == ilimitado20.name"></span>
 
 									<span class="text-center white">
-										{{ ilimitado20.minutes.shortDesc }} + {{ ilimitado20.gb }}GB
-									</br><strong>{{ ilimitado20.price }}€</strong>
+										{{ ilimitado20.minutes.shortDesc }} + 
+										{{ checkGb(ilimitado20.gb) }}GB
+									</br><strong>{{ getMobilePrice(ilimitado20.price) }}€</strong>
 									</span>
 								</button>
 							</div>
@@ -148,8 +156,9 @@
 										v-show="checkedBtn == navega5.name"></span>
 
 									<span class="text-center white">
-										  {{ navega5.minutes.shortDesc }} + {{ navega5.gb }}GB
-										  </br><strong>{{ navega5.price }}€</strong>
+										  {{ navega5.minutes.shortDesc }} + 
+										  {{ checkGb(navega5.gb) }}GB
+										  </br><strong>{{ getMobilePrice(navega5.price) }}€</strong>
 									</span>
 								</button>
 							</div>
@@ -161,8 +170,9 @@
 										v-show="checkedBtn == navega10.name"></span>
 
 									<span class="text-center white">
-										{{ navega10.minutes.shortDesc }} + {{ navega10.gb }}GB
-									</br><strong>{{ navega10.price }}€</strong>
+										{{ navega10.minutes.shortDesc }} + 
+										{{ checkGb(navega10.gb) }}GB
+									</br><strong>{{ getMobilePrice(navega10.price) }}€</strong>
 									</span>
 								</button>
 							</div>
@@ -220,6 +230,43 @@ export default{
 			this.selectedBtnName = selectedProductObj.name;
 
 			
+		},
+
+		/**
+		* @param int
+		* simplemente devuelve el doble de gigas si tenemos fibra
+		* en el paquete
+		*/
+
+		checkGb(x) {
+
+				if (this.$store.state.internetPrice) {
+					return 2*x;
+				}
+				return x;
+		},
+
+		/**
+		* @ param int price
+		* @ return int
+		* devuelve el precio con o sin descuento segun 
+		* si tenemos fibra o no en el paquete
+		*/
+		getMobilePrice(price) {
+
+			if (this.$store.state.internetPrice) {
+				// tenemos la fibra seleccionada
+
+				if (price == 3) {
+					// tengo la tarifa mini, el descuento no es exactamente
+					// del 40%, estoy obligado ha hacer un apaño
+					return 2;
+				}
+
+				return price - (price * this.discount);
+			}
+
+			return price;
 		},
 
 		...mapMutations([
