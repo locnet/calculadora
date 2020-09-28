@@ -3,11 +3,22 @@
     <!-- Vue component MainMenu -->
          
     <div class="container" >
-        <div class="col-12 pt-3 pb-3">
-          <h4 class="blue text-center">Tienda Digi Arganda: 91 87 00 693</h4>
+        <div class="row portada">
+            <div class="col-12  my-auto">
+                <h1 class="text-center white">CONTRATA DIGI </h1>
+                <h1 class="text-center yellow">¡EL AHORRO ES BRUTAL!</h1>
+                <h1 class="text-center white">91 87 00 693</h1>
+                <h1 class="text-center">
+                    <a href="#calculadora" class="align-center">
+                        <button class="btn btn-warning btn-lg">
+                            CALCULA LO QUE PAGARAS CON DIGI
+                        </button>
+                    </a>
+                </h1>
+            </div>
         </div>
-        <div class="row">
-            <div class="col-12 col-sm-12 col-md-8">
+        <div class="row" id="calculadora">
+            <div class="col-12 col-sm-12 col-md-8 pb-5 pt-5">
                 <!-- componente calculadora -->
                 <app-fibra></app-fibra>
 
@@ -41,5 +52,8 @@ export default {
 
     }
 }
-
+// smoth scroll
+var scroll = new SmoothScroll('a[href*="#"]',{
+        speed:1000,
+    });
 </script>

@@ -7,7 +7,7 @@
 export const productMixin = {
 	/*
 	* 
-	* los mixins se ejecutan antes que los componentes
+	* recuerda: los mixins se cargan antes que los componentes
 	*/
 
 	data() {
@@ -152,7 +152,8 @@ export const productMixin = {
 		    	},
 		    	gb: 6
 		    },
-
+		    // el descuento con la fibra es de 40% en este momento
+		    // pero podria cambiar
 		    
 		    discount: 0.4
         }

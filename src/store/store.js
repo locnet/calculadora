@@ -54,7 +54,7 @@ export const store = new Vuex.Store({
 		},
 
 		destroyMobile (state, pos) {
-			// borra el movil con la posicion data
+			// borra el movil con la posicion indicada
 			state.mobilesColection.splice(pos,1);
 		},
 		getMobilesColection(state) {
@@ -78,7 +78,7 @@ export const store = new Vuex.Store({
 
 			if (internetPrice > 0) {
 				if ( price == 3) {
-					// la tarifa mini cuestea 3 euros, con descuento es 2
+					// la tarifa mini cuesta 3 euros, con descuento es 2
 					p = 2;
 					return p;
 				}
