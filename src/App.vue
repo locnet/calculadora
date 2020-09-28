@@ -17,7 +17,7 @@
                 </h1>
             </div>
         </div>
-        <div class="row" id="calculadora" style="min-height:800px">
+        <div class="row" id="calculadora">
             <div class="col-12 col-sm-12 col-md-8 pb-5 pt-5 mt-5">
                 <!-- componente calculadora -->
                 <app-fibra></app-fibra>
