@@ -191,10 +191,13 @@
 				var t = 0;
 				var l = [] = this.$store.state.mobilesColection;
 
-				for (var i = 0; i < l.length; i++) {
-					x += l[i].price - l[i].bonus_price;
-						
+				if (this.$store.state.internetPrice) {
+					for (var i = 0; i < l.length; i++) {
+						x += l[i].price - l[i].bonus_price;
+							
+					}
 				}
+				
 				return x;
 			}
 
