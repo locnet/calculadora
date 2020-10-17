@@ -128,9 +128,7 @@
 									</span>
 								</button>
 							</div>
-						</div>
-
-						<div class="row">
+						
 							<div class="col-md col-6 col-sm-6">
 								<button class="btn btn-block ilimitado modal-button"
 										 @click="sendSelectedPrice(ilimitado15, 'ilimitado')">
@@ -144,7 +142,7 @@
 									</span>
 								</button>
 							</div>
-							<div class="col-md col-6 col-sm-6">
+							<div class="col-md-3 col-6 col-sm-6">
 								<button class="btn btn-block ilimitado modal-button"
 										@click="sendSelectedPrice(ilimitado20, 'ilimitado')">
 
@@ -166,7 +164,7 @@
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">CERRAR</button>						
 					</div>
-					
+
 				</div>
 			</div>
 		</div>
