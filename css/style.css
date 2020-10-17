@@ -438,7 +438,9 @@ label {
     .portada button {
         margin: 30px 0;
     }
-
+    .portada {
+        height: 650px;
+    }
     .portada h1 {
         font-size: 3em;
         font-weight: 800;

@@ -63,13 +63,13 @@
 						<p> Movil {{ mobile.name }} <br />
 							<span class="blue extra-small" style="padding-top:0px; margin-top: 0px">
 							{{ mobile.minutes.largeDesc }} y
-							{{ checkGb(mobile.gb) }}GB </span>
+							{{ checkGb(mobile) }}GB </span>
 						</p>
 						
 					</td>
 
 					<td v-show="mobile.price > 0">
-						<p class="blue w-600">{{ getMobilePrice(mobile.price) }}€
+						<p class="blue w-600">{{ getMobilePrice(mobile) }}€
 							<span class="extra-small">/mes</span>
 						</p>
 					</td>
@@ -140,9 +140,9 @@
 			checkGb(x) {
 
 				if (this.$store.state.internetPrice) {
-					return 2*x;
+					return x.bonus_gb;
 				}
-				return x;
+				return x.gb;
 			},
 
 			/**
@@ -151,20 +151,14 @@
 			* devuelve el precio con o sin descuento segun 
 			* si tenemos fibra o no en el paquete
 			*/
-			getMobilePrice(price) {
-				if (this.$store.state.internetPrice) {
-					// tenemos la fibra seleccionada
+			getMobilePrice(obj) {
+			if (this.$store.state.internetPrice) {
+				// tenemos la fibra seleccionada
 
-					if (price == 3) {
-						// tengo la tarifa mini, el descuento no es exactamente
-						// del 40%, estoy obligado ha hacer un apaño
-						return 2;
-					}
+				return parseInt(obj.bonus_price);
+			}
 
-					return price - (price * this.discount);
-				}
-
-				return price;
+			return parseInt(obj.price);
 			},
 
 			/**
@@ -178,13 +172,19 @@
 				
 				for (var i = 0; i < l.length; i++) {
 					
-					mobilesPrice += this.getMobilePrice(l[i].price);
+					mobilesPrice += parseInt(this.getMobilePrice(l[i]));
 						
 				}
-				
+				console.log('PRECIO TOTAL',mobilesPrice);
 				return mobilesPrice;
 			},
 
+			/**
+			* @return int
+			* @param none
+			* calcula cuanto se ahora al mes en el precio de los moviles
+			* si se contrata la fibra
+			*/
 			getTotalDiscount() {
 				
 				var x = 0;
@@ -192,11 +192,10 @@
 				var l = [] = this.$store.state.mobilesColection;
 
 				for (var i = 0; i < l.length; i++) {
-					x += l[i].price;
+					x += l[i].price - l[i].bonus_price;
 						
 				}
-				t += x - this.getTotalMobilePrice();
-				return t;
+				return x;
 			}
 
 		}

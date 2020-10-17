@@ -32,7 +32,8 @@ export const store = new Vuex.Store({
 		},
 
 		addNewMobile (state, mobileObj) {
-			// m es un objeto en formato {name: '', price: '0', minutes:'', gb: '',divColor: ''}
+			// m es un objeto en formato 
+			//{ name: '', price: '0',bonus_price, minutes:'', gb: '',bonus_gb, divColor: ''}
 			state.mobilesColection.push(mobileObj);
 		},
 
@@ -43,6 +44,7 @@ export const store = new Vuex.Store({
 
 			// copio el array original
 			var a = [] = state.mobilesColection;
+
 			// limpio el array original
 			state.mobilesColection = [];
 
@@ -57,6 +59,7 @@ export const store = new Vuex.Store({
 			// borra el movil con la posicion indicada
 			state.mobilesColection.splice(pos,1);
 		},
+		
 		getMobilesColection(state) {
 			return state.mobilesColection;
 		},
@@ -73,7 +76,7 @@ export const store = new Vuex.Store({
 			state.mobilesColection = [];
 		},
 
-		getDiscountedPrice (state,price) {
+		getDiscountedPrice (state, price) {
 			var p = 0;
 
 			if (internetPrice > 0) {

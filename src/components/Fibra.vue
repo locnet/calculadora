@@ -32,7 +32,7 @@
 				<div v-show="switchFibra" class="card text-center border-primary" 
 					v-bind:class="{ 'selected-card': internetActiveType == 'fibra50' }">
 					<div class="card-body">
-						<h4 class="card-title blue">50 Mb</h4>
+						<h4 class="card-title blue">100 Mb</h4>
 						<h4 class="card-text blue w-600">25 €<span class="small">/mes</span></h4>
 					</div>
 				</div>
@@ -203,42 +203,18 @@
 
 				// la primera vez que llamamos esta funcion es cuando el usuario ha
 				// escogido una fibra
-				// el precio del fijo con llamadas ilimitadas es diferente, dependiendo  
-				// del tipo de fibra, por esto estoy obligado a cambiar el precio de manera
-				// dinamica
 
-				
-				var x = this.fijoConLlamadas.price; // precio normal
-				var y = x - (x * this.discount);              // precio con descuento de 40%
 				this.onlyPhonePrice = this.fijoSinLlamadas.price; // fijo sin llamadas
 				
-
-				if (this.internetActiveType == 'fibra500') {
-					// tiene un descuento de 40%
-					this.phoneWithCallsPrice = y;
-				
-				} else {
-					this.phoneWithCallsPrice = x;
-				}
-			
+				this.phoneWithCallsPrice = this.fijoConLlamadas.price;	
 
 				if (this.phoneActiveType == "con_llamadas") {
-					var p = 0;
 					
-					if (this.internetActiveType == "fibra500" ) {
-						// fibra 500, tiene un descuento de 40%
-						p = y;
-						
-					} else {
-						// fibra 50
-						p = x;
-
-					}
 					// actualiamos el precio en store.js
-					this.setVoicePrice(p);
+					this.setVoicePrice(this.fijoConLlamadas.price);
 
 					// actualizamos el precio que se muestra en el div
-					this.phoneWithCallsPrice = p;
+					this.phoneWithCallsPrice = this.fijoConLlamadas.price;
 					
 				} else if (this.phoneActiveType == 'sin_llamadas') {
 					this.setVoicePrice(this.onlyPhonePrice);

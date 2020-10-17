@@ -25,8 +25,8 @@
 
 									<span class="white">
 										{{ combo5.minutes.shortDesc }} +  
-										{{ checkGb(combo5.gb) }}GB
-										<br/> <strong>{{ getMobilePrice(combo5.price) }}€</strong>
+										{{ checkGb(combo5) }}GB
+										<br/> <strong>{{ getMobilePrice(combo5) }}€</strong>
 									</span>
 								
 								</button>
@@ -40,8 +40,8 @@
 
 									<span class="white">
 											{{ combo10.minutes.shortDesc }} + 
-											{{ checkGb(combo10.gb) }}GB
-											<br/><strong> {{ getMobilePrice(combo10.price) }}€</strong>
+											{{ checkGb(combo10) }}GB
+											<br/><strong> {{ getMobilePrice(combo10) }}€</strong>
 									</span>
 								</button>
 							</div>
@@ -55,8 +55,8 @@
 
 									<span class="text-center white">
 										{{ combo15.minutes.shortDesc }} + 
-										{{ checkGb(combo15.gb) }}GB
-										</br><strong>{{ getMobilePrice(combo15.price) }}€</strong>
+										{{ checkGb(combo15) }}GB
+										</br><strong>{{ getMobilePrice(combo15) }}€</strong>
 									</span>
 								</button>
 							</div>
@@ -70,8 +70,8 @@
 
 									<span class="text-center white">
 											{{ combo20.minutes.shortDesc }} + 
-											{{ checkGb(combo20.gb) }}GB
-										</br><strong>{{ getMobilePrice(combo20.price) }}€</strong>
+											{{ checkGb(combo20) }}GB
+										</br><strong>{{ getMobilePrice(combo20) }}€</strong>
 									</span>
 								</button>
 							</div>
@@ -93,11 +93,27 @@
 
 									<span class="text-center white">
 										{{ mini.minutes.shortDesc }} + 
-										{{ checkGb(mini.gb) }}GB
-									</br><strong>{{ getMobilePrice(mini.price) }}€</strong>
+										{{ checkGb(mini) }}GB
+									</br><strong>{{ getMobilePrice(mini) }}€</strong>
 									</span>
 								</button>
 							</div>
+
+							<div class="col-md col-6 col-sm-6">
+								<button class="btn btn-block ilimitado modal-button"
+										@click="sendSelectedPrice(ilimitado7,'ilimitado')">
+
+									<span class="fas fa-check-circle green"
+										v-show="checkedBtn == ilimitado7.name"></span>
+
+									<span class="text-center white">
+										{{ ilimitado7.minutes.shortDesc }} + 
+										{{ checkGb(ilimitado7) }}GB
+									</br><strong>{{ getMobilePrice(ilimitado7) }}€</strong>
+									</span>
+								</button>
+							</div>
+
 							<div class="col-md col-6 col-sm-6">
 								<button class="btn btn-block ilimitado modal-button"
 										@click="sendSelectedPrice(ilimitado10,'ilimitado')">
@@ -107,11 +123,14 @@
 									
 									<span class="text-center white">
 										{{ ilimitado10.minutes.shortDesc }} + 
-										{{ checkGb(ilimitado10.gb) }}GB
-										<br/><strong>{{ getMobilePrice(ilimitado10.price) }}€</strong>
+										{{ checkGb(ilimitado10) }}GB
+										<br/><strong>{{ getMobilePrice(ilimitado10) }}€</strong>
 									</span>
 								</button>
 							</div>
+						</div>
+
+						<div class="row">
 							<div class="col-md col-6 col-sm-6">
 								<button class="btn btn-block ilimitado modal-button"
 										 @click="sendSelectedPrice(ilimitado15, 'ilimitado')">
@@ -120,12 +139,11 @@
 
 									<span class="text-center white">
 											{{ ilimitado15.minutes.shortDesc }} + 
-											{{ checkGb(ilimitado15.gb) }}GB
-										</br><strong>{{ getMobilePrice(ilimitado15.price) }}€</strong>
+											{{ checkGb(ilimitado15) }}GB
+										</br><strong>{{ getMobilePrice(ilimitado15) }}€</strong>
 									</span>
 								</button>
 							</div>
-
 							<div class="col-md col-6 col-sm-6">
 								<button class="btn btn-block ilimitado modal-button"
 										@click="sendSelectedPrice(ilimitado20, 'ilimitado')">
@@ -135,53 +153,20 @@
 
 									<span class="text-center white">
 										{{ ilimitado20.minutes.shortDesc }} + 
-										{{ checkGb(ilimitado20.gb) }}GB
-									</br><strong>{{ getMobilePrice(ilimitado20.price) }}€</strong>
+										{{ checkGb(ilimitado20) }}GB
+									</br><strong>{{ getMobilePrice(ilimitado20) }}€</strong>
 									</span>
 								</button>
 							</div>
 						</div><!-- fin ilimitado -->
 
 						<div class="h-60"></div>
-
-						<div class="col-md-12">
-							<h3 class="blue w-300 text-center">Para los que solo quieren navegar</h3>
-						</div>
-						<div class="row">
-							<div class="col-md col-6 col-sm-6">
-								<button class="btn btn-block navega modal-button"
-										@click="sendSelectedPrice(navega5, 'navega')">
-
-									<span class="fas fa-check-circle yellow"
-										v-show="checkedBtn == navega5.name"></span>
-
-									<span class="text-center white">
-										  {{ navega5.minutes.shortDesc }} + 
-										  {{ checkGb(navega5.gb) }}GB
-										  </br><strong>{{ getMobilePrice(navega5.price) }}€</strong>
-									</span>
-								</button>
-							</div>
-							<div class="col-md col-6 col-sm-6">
-								<button class="btn btn-block navega modal-button"
-										@click="sendSelectedPrice(navega10, 'navega')">
-
-									<span class="fas fa-check-circle yellow"
-										v-show="checkedBtn == navega10.name"></span>
-
-									<span class="text-center white">
-										{{ navega10.minutes.shortDesc }} + 
-										{{ checkGb(navega10.gb) }}GB
-									</br><strong>{{ getMobilePrice(navega10.price) }}€</strong>
-									</span>
-								</button>
-							</div>
-						</div>
 					</div>
+
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">CERRAR</button>
-						
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">CERRAR</button>						
 					</div>
+					
 				</div>
 			</div>
 		</div>
@@ -212,7 +197,7 @@ export default{
 		*/
 
 		sendSelectedPrice(selectedProductObj, divColorClass) {
-			// acutualizo el precio en PriceComponent mediante eventBus
+			// actualizo el precio en PriceComponent mediante eventBus
 			// se pasa un array con el index del movil actualizado y 
 			// los detalles de la tarifa seleccionada como objeto
 			// añado al objeto el color del div
@@ -240,10 +225,10 @@ export default{
 
 		checkGb(x) {
 
-				if (this.$store.state.internetPrice) {
-					return 2*x;
-				}
-				return x;
+			if (this.$store.state.internetPrice) {
+				return x.gb + x.bonus_gb;
+			}
+			return x.gb;
 		},
 
 		/**
@@ -252,21 +237,15 @@ export default{
 		* devuelve el precio con o sin descuento segun 
 		* si tenemos fibra o no en el paquete
 		*/
-		getMobilePrice(price) {
+		getMobilePrice(obj) {
 
 			if (this.$store.state.internetPrice) {
 				// tenemos la fibra seleccionada
 
-				if (price == 3) {
-					// tengo la tarifa mini, el descuento no es exactamente
-					// del 40%, estoy obligado ha hacer un apaño
-					return 2;
-				}
-
-				return price - (price * this.discount);
+				return obj.bonus_price;
 			}
 
-			return price;
+			return obj.price;
 		},
 
 		...mapMutations([

@@ -41,13 +41,13 @@
 							<div class="col-4">
 								<p class="extra-small blue bold align-middle">
 									{{ index.minutes.shortDesc }}<br/>
-									{{ checkGb(index.gb) }}GB
+									{{ checkGb(index) }}GB
 								</p>
 							</div>
 
 							<div class="col-4 p-2" :class="[index.divColor]" >
 								<h3 class="white w-600 align-middle">
-									{{ getMobilePrice(index.price) }}€<span class="small">/mes</span></h3>
+									{{ getMobilePrice(index) }}€<span class="small">/mes</span></h3>
 
 							</div>
 						</div>
@@ -139,9 +139,17 @@
 
 				if (this.phoneCounter < 4) {
 
-					var m = {name: '', price: 0, minutes:'', gb: '',divColor: ''};
+					var m = {
+						name: '',
+						price: 0,
+						bonus_price: 0, 
+						minutes: '',
+						gb: '',
+						bonus_gb: '',
+						divColor: ''
+					};
 
-					// creamos un nuevo elemento en el array, que sera el ultima
+					// creamos un nuevo elemento en el array, que sera el ultimo
 					// en js cuando se borra un elemento no afecta la longitud del array,
 					// el elemento sigue ocupando su posicion pero con falor false
 					this.addNewMobile(m);
@@ -174,9 +182,9 @@
 			checkGb(x) {
 
 				if (this.$store.state.internetPrice) {
-					return 2*x;
+					return x.gb + x.bonus_gb;
 				}
-				return x;
+				return x.gb;
 			},
 
 			/**
@@ -185,21 +193,15 @@
 			* devuelve el precio con o sin descuento segun 
 			* si tenemos fibra o no en el paquete
 			*/
-			getMobilePrice(price) {
+			getMobilePrice(obj) {
 
-				if (this.$store.state.internetPrice) {
-					// tenemos la fibra seleccionada
+			if (this.$store.state.internetPrice) {
+				// tenemos la fibra seleccionada
 
-					if (price == 3) {
-						// tengo la tarifa mini, el descuento no es exactamente
-						// del 40%, estoy obligado ha hacer un apaño
-						return 2;
-					}
+				return obj.bonus_price;
+			}
 
-					return price - (price * this.discount);
-				}
-
-				return price;
+			return obj.price;
 			},
 
 			/**
