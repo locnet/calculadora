@@ -140,7 +140,7 @@
 			checkGb(x) {
 
 				if (this.$store.state.internetPrice) {
-					return x.bonus_gb;
+					return x.gb + x.bonus_gb;
 				}
 				return x.gb;
 			},
@@ -175,7 +175,6 @@
 					mobilesPrice += parseInt(this.getMobilePrice(l[i]));
 						
 				}
-				console.log('PRECIO TOTAL',mobilesPrice);
 				return mobilesPrice;
 			},
 
