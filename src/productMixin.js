@@ -160,13 +160,14 @@ export const productMixin = {
 		    	gb: 40,
 		    	bonus_gb: 20
 		    },
+
 		    ilimitodo: {
 		    	name: "ILIMITODO",
 		    	price: 25,
 		    	bonus_price: 20,
 		    	minutes: {
 		    		shortDesc: "Ilimitado",
-		    		largeDesc: "Llamadas ilimtadas, nacional e internacional"
+		    		largeDesc: "Llamadas nacionales e internacionales ilimitadas"
 		    	},
 		    	gb: "Ilimitados ",
 		    	gb: "Ilimitados "
