@@ -90,7 +90,25 @@ export const store = new Vuex.Store({
 			}
 
 			return p;			
-		}
+		},
+
+		// check the GB of every mobile price plan
+
+		stateCheckGb(x) {
+
+				if (internetPrice > 0) {
+
+					if (x.name == "ilimitodo") {
+						// tenemos un caso especial, los gigabites son ilimitados
+						// asi que el valor devuelto no es tipo integer
+						return x.gb;
+					}
+
+					return x.gb + x.bonus_gb;
+				}
+
+				return x.gb;
+			}
 
 	}
 });	

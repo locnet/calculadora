@@ -41,7 +41,7 @@
 							<div class="col-4">
 								<p class="extra-small blue bold align-middle">
 									{{ index.minutes.shortDesc }}<br/>
-									{{ checkGb(index) }}GB
+									{{ checkGb(index) }} GB
 								</p>
 							</div>
 
@@ -180,10 +180,17 @@
 			},
 
 			checkGb(x) {
+				if (x.name == "ILIMITODO") {
+					// tenemos un caso especial, los gigabites son ilimitados
+					// asi que el valor devuelto no es tipo integer
+					return x.gb;
+				}
 
 				if (this.$store.state.internetPrice) {
+
 					return x.gb + x.bonus_gb;
 				}
+				
 				return x.gb;
 			},
 

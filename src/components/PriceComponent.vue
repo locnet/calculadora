@@ -124,6 +124,7 @@
 		methods: {
 			...mapMutations([
 			    'getMobilesColection', // map `this.getTotalPrice` to `this.$store.commit('getTotal')`
+			    'stateCheckGb'
 
 			     
 			]),
@@ -138,10 +139,18 @@
 			* si el usuario a elegido una fibra se doblan los gigas 
 			*/
 			checkGb(x) {
+				
+				if (x.name == "ILIMITODO") {
+					// tenemos un caso especial, los gigabites son ilimitados
+					// asi que el valor devuelto no es tipo integer
+					return x.gb;
+				}
 
 				if (this.$store.state.internetPrice) {
+
 					return x.gb + x.bonus_gb;
 				}
+
 				return x.gb;
 			},
 
@@ -159,7 +168,9 @@
 			}
 
 			return parseInt(obj.price);
+
 			},
+
 
 			/**
 			* @return int
@@ -175,6 +186,7 @@
 					mobilesPrice += parseInt(this.getMobilePrice(l[i]));
 						
 				}
+				
 				return mobilesPrice;
 			},
 
@@ -191,7 +203,9 @@
 				var l = [] = this.$store.state.mobilesColection;
 
 				if (this.$store.state.internetPrice) {
+
 					for (var i = 0; i < l.length; i++) {
+
 						x += l[i].price - l[i].bonus_price;
 							
 					}

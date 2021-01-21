@@ -142,6 +142,7 @@
 									</span>
 								</button>
 							</div>
+
 							<div class="col-md-3 col-6 col-sm-6">
 								<button class="btn btn-block ilimitado modal-button"
 										@click="sendSelectedPrice(ilimitado20, 'ilimitado')">
@@ -153,6 +154,21 @@
 										{{ ilimitado20.minutes.shortDesc }} + 
 										{{ checkGb(ilimitado20) }}GB
 									</br><strong>{{ getMobilePrice(ilimitado20) }}€</strong>
+									</span>
+								</button>
+							</div>
+
+							<div class="col-md-3 col-6 col-sm-6">
+								<button class="btn btn-block ilimitado modal-button"
+										@click="sendSelectedPrice(ilimitodo, 'ilimitado')">
+
+									<span class="fas fa-check-circle green"
+										v-show="checkedBtn == ilimitodo.name"></span>
+
+									<span class="text-center white">
+										{{ ilimitodo.minutes.shortDesc }}
+
+									</br><strong>{{ getMobilePrice(ilimitodo) }}€</strong>
 									</span>
 								</button>
 							</div>
@@ -222,12 +238,20 @@ export default{
 		*/
 
 		checkGb(x) {
+				if (x.name == "ILIMITODO") {
+					// tenemos un caso especial, los gigabites son ilimitados
+					// asi que el valor devuelto no es tipo integer
+					return x.gb;
+				}
 
-			if (this.$store.state.internetPrice) {
-				return x.gb + x.bonus_gb;
-			}
-			return x.gb;
-		},
+				if (this.$store.state.internetPrice) {
+
+					return x.gb + x.bonus_gb;
+				}
+				
+				return x.gb;
+				
+			},
 
 		/**
 		* @ param int price
@@ -249,7 +273,8 @@ export default{
 		...mapMutations([
 			// map `this.incrementVoicePrice()` to `this.$store.commit('incrementVoicePrice')`,
 		    'updateMobile',
-		    'incrementMobilePrice'
+		    'incrementMobilePrice',
+		    'stateCheckGb'
 		    ])
 
 		

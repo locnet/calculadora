@@ -160,8 +160,19 @@ export const productMixin = {
 		    	gb: 40,
 		    	bonus_gb: 20
 		    },
+		    ilimitodo: {
+		    	name: "ILIMITODO",
+		    	price: 25,
+		    	bonus_price: 20,
+		    	minutes: {
+		    		shortDesc: "Ilimitado",
+		    		largeDesc: "Llamadas ilimtadas, nacional e internacional"
+		    	},
+		    	gb: "Ilimitados ",
+		    	gb: "Ilimitados "
+		    },
 
-		    // en la ultima actualizacion de precio los Navega han desaparecido
+		    // en la ultima actualizacion de los productos los Navega han desaparecido
 		    navega5: {
 		    	name: 'Navega 3Gb',
 		    	price: 5,
