@@ -22,7 +22,7 @@
 				<div v-show="switchFibra" class="card text-center border-primary" 
 					v-bind:class="{ 'selected-card': internetActiveType == 'fibra500' }">
 					<div class="card-body">
-						<h4 class="card-title blue">500 Mb</h4>
+						<h4 class="card-title blue">1GB</h4>
 						<h4 class="card-text blue w-600">30 €<span class="small">/mes</span></h4>
 					</div>
 				</div>
@@ -32,7 +32,7 @@
 				<div v-show="switchFibra" class="card text-center border-primary" 
 					v-bind:class="{ 'selected-card': internetActiveType == 'fibra50' }">
 					<div class="card-body">
-						<h4 class="card-title blue">100 Mb</h4>
+						<h4 class="card-title blue">300 Mb</h4>
 						<h4 class="card-text blue w-600">25 €<span class="small">/mes</span></h4>
 					</div>
 				</div>
